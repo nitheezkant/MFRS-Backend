@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}menu on {{date}} {% endblock %}
+
+{% block content %}
+<h1>{{date}}</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <select name="type">
+        <option value="BreakFast">BreakFast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Snack">Snack</option>
+        <option value="Dinner">Dinner</option>
+    </select>
+    <button type="submit">Open Meal</button>
+</form>
+{% endblock %}
