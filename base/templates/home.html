@@ -1,0 +1,50 @@
+{% include 'main.html' %}
+
+{% block content %}
+
+<h1>MFRS</h1>
+<style>
+    .home-container{
+        display:grid;
+        grid-template-columns: 1fr 2fr 1fr; 
+    }
+</style>
+
+<div class="home-container">
+    <div>
+        <h3>Browse types</h3>
+        <hr>
+        <div>
+            <a href="{% url 'home' %}">All</a>
+        </div>
+        {% for type in types %}
+        <div>
+            <a href="{% url 'home' %}?q={{type.name}}">{{type.name}}</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h5>{{dishescount}} dishes available</h5>
+        <a href="{% url 'add-food' %}">Add Dish</a>
+        <hr>
+        {% for food in foods %}
+        <div>
+            <h4>{{food.name}}</h4>
+            <a href="{% url 'update-food' food.id %}">Edit Dish</a>
+            <a href="{% url 'delete-food' food.id %}">Delete Dish</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="{% url 'add-type' %}">Add Type</a>
+        <hr>
+        {% for type in types %}
+        <div>
+            <h4>{{type.name}}</h4>
+            <a href="{% url 'update-type' type.id %}">Edit Type</a>
+            <a href="{% url 'delete-type' type.id %}">Delete Type</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

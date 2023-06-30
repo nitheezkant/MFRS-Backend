@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} 
+
+{% block title %} Create Meal {% endblock %} 
+
+{% block content %} 
+<h1>{{date}}</h1>
+<h1>{{meal}}</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <label>
+        Add Item:
+        <input type="text" name="food"/>
+    </label>
+</form>
+{% endblock %}

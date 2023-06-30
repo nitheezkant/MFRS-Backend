@@ -1,1 +1,2 @@
-# MFRS-Backend
+# MFRS
+Zense Project

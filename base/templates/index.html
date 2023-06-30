@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block title %}Index{% endblock %}
+
+{% block stlye %} 
+<script src="script.js"></script>
+{% endblock %}
+
+{% block content %}
+<form id="dateForm" method="post" action="">
+    {% csrf_token %}
+    <label>Date:
+        <input type="date" name="date" id="dateInput" />
+    </label>
+    <button type="submit">Search</button>
+</form>
+
+{% endblock %}
